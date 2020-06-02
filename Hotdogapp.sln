@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.128
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotdogapp.Server", "Hotdogapp\Server\Hotdogapp.Server.csproj", "{7570699F-63D9-4152-B92F-0BEC71AAA3FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotdogapp.Server", "Hotdogapp\Server\Hotdogapp.Server.csproj", "{7570699F-63D9-4152-B92F-0BEC71AAA3FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotdogapp.Client", "Hotdogapp\Client\Hotdogapp.Client.csproj", "{A0BB1990-9F3A-47FF-B72C-025E06E39D72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotdogapp.Client", "Hotdogapp\Client\Hotdogapp.Client.csproj", "{A0BB1990-9F3A-47FF-B72C-025E06E39D72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotdogapp.Shared", "Hotdogapp\Shared\Hotdogapp.Shared.csproj", "{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotdogapp.Shared", "Hotdogapp\Shared\Hotdogapp.Shared.csproj", "{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotdogappML.Model", "Hotdogapp\HotdogappML.Model\HotdogappML.Model.csproj", "{290040E4-13D7-475E-B86A-FEB566B9BA84}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotdogappML.ConsoleApp", "Hotdogapp\HotdogappML.ConsoleApp\HotdogappML.ConsoleApp.csproj", "{67D5C8BB-2E81-4933-800A-907426F35A95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageClassification.Train", "C:\Users\igal\Downloads\DeepLearning_ImageClassification_Training\ImageClassification.Train\ImageClassification.Train.csproj", "{72EF2B10-E1F3-49C3-8D30-B43C5723752C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +29,10 @@ Global
 		{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}.Release|Any CPU.Build.0 = Release|Any CPU
-		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67D5C8BB-2E81-4933-800A-907426F35A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67D5C8BB-2E81-4933-800A-907426F35A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67D5C8BB-2E81-4933-800A-907426F35A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67D5C8BB-2E81-4933-800A-907426F35A95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72EF2B10-E1F3-49C3-8D30-B43C5723752C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72EF2B10-E1F3-49C3-8D30-B43C5723752C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72EF2B10-E1F3-49C3-8D30-B43C5723752C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72EF2B10-E1F3-49C3-8D30-B43C5723752C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

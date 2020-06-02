@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using Microsoft.Extensions.ML;
+using Hotdogapp.Shared.Models;
 
 namespace Hotdogapp.Server
 {
@@ -22,9 +24,11 @@ namespace Hotdogapp.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddPredictionEnginePool<InMemoryImageData, ImagePrediction>()
+                    .FromFile(Configuration["MLModel:MLModelFilePath"]);
             services.AddControllersWithViews();
             services.AddRazorPages();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

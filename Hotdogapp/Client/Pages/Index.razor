@@ -11,13 +11,25 @@
 <InputFile id="image-picker" OnChange="HandlePhotoSelected" accept="image/*" />
 <br />
 <label class="text-button" for="image-picker">
-    <img src="@_photoURL"  />
+    <img src="@_photoURL" />
 </label>
 <br />
-<button @onclick="PerformHotDogCheck" class="btn btn-success" type="button">Submit Image</button>
+<br />
+@if (isDetectingHotDog) {
+    <h2>Checing if it is a hotdog</h2>
+<Pulse />
+}
 @if (_hotDogResult != null)
 {
-    @_hotDogResult.accuracy
+
+    @if (_hotDogResult.isHotDog)
+    {
+        <h2>It is a hotdog!</h2>
+    }
+    else
+    {
+        <h2>It is NOT a hotdog!</h2>
+    }
 }
 
 
@@ -41,16 +53,16 @@
             // Represent it as a data URL we can display
             MemoryStream bytes = await imageFile.ReadAllAsync();
             _photoURL = bytes.ToDataUrl("image/jpeg");
+            //send to server
+            isDetectingHotDog = true;
+            StateHasChanged();
+            var response = await _httpClient.PostAsync("api/DetectHotDog", new StringContent(_photoURL));
+            _hotDogResult = await response.Content.ReadFromJsonAsync<HotDogResultModel>();
+
+
+            isDetectingHotDog = false;
         }
     }
 
-    private async Task PerformHotDogCheck()
-    {
-        isDetectingHotDog = true;
-        var response = await _httpClient.PostAsync("api/DetectHotDog", new StringContent(_photoURL));
-        _hotDogResult = await response.Content.ReadFromJsonAsync<HotDogResultModel>();
 
-
-        isDetectingHotDog = false;
-    }
 }

@@ -7,11 +7,22 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Extensions.ML" Version="1.5.0" />
+    <PackageReference Include="Microsoft.ML" Version="1.5.0" />
+    <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.5.0" />
+    <PackageReference Include="Microsoft.ML.Vision" Version="1.5.0" />
+    <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Client\Hotdogapp.Client.csproj" />
     <ProjectReference Include="..\Shared\Hotdogapp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ML\imageClassifier.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 
