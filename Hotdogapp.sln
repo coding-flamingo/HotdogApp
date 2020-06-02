@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.128
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotdogapp.Server", "Hotdogapp\Server\Hotdogapp.Server.csproj", "{7570699F-63D9-4152-B92F-0BEC71AAA3FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotdogapp.Client", "Hotdogapp\Client\Hotdogapp.Client.csproj", "{A0BB1990-9F3A-47FF-B72C-025E06E39D72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotdogapp.Shared", "Hotdogapp\Shared\Hotdogapp.Shared.csproj", "{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotdogappML.Model", "Hotdogapp\HotdogappML.Model\HotdogappML.Model.csproj", "{290040E4-13D7-475E-B86A-FEB566B9BA84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotdogappML.ConsoleApp", "Hotdogapp\HotdogappML.ConsoleApp\HotdogappML.ConsoleApp.csproj", "{67D5C8BB-2E81-4933-800A-907426F35A95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7570699F-63D9-4152-B92F-0BEC71AAA3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7570699F-63D9-4152-B92F-0BEC71AAA3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7570699F-63D9-4152-B92F-0BEC71AAA3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7570699F-63D9-4152-B92F-0BEC71AAA3FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BB1990-9F3A-47FF-B72C-025E06E39D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BB1990-9F3A-47FF-B72C-025E06E39D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BB1990-9F3A-47FF-B72C-025E06E39D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BB1990-9F3A-47FF-B72C-025E06E39D72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FBC6CEE-45D7-45AB-9492-F4CF95F67953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290040E4-13D7-475E-B86A-FEB566B9BA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D5C8BB-2E81-4933-800A-907426F35A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67D5C8BB-2E81-4933-800A-907426F35A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67D5C8BB-2E81-4933-800A-907426F35A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67D5C8BB-2E81-4933-800A-907426F35A95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D1510AA-D53D-40A9-A176-F32B05AE18B0}
+	EndGlobalSection
+EndGlobal
