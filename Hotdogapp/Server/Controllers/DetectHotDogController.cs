@@ -10,8 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ML;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Hotdogapp.Server.Controllers
 {
     [ApiController]
@@ -47,7 +45,7 @@ namespace Hotdogapp.Server.Controllers
                 _logger.LogError("Failed to read image", ex);
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
-            var prediction = _predictionEnginePool.Predict(imageInputforModel);
+            ImagePrediction prediction = _predictionEnginePool.Predict(imageInputforModel);
             HotDogResultModel hotDogResult = new HotDogResultModel
             {
                 accuracy = prediction.Score.Max().ToString(),
