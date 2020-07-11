@@ -6,8 +6,13 @@
 @inject NavigationManager navigationManager
 @inject HttpClient _httpClient
 
-
-
+<h1>Hot Dog Detector App</h1>
+<h2>Inspiration</h2>
+<p>This app was inspired by HBO's Sillicon Valley See food application. See the video below :)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vIci3C4JkL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2>Hot Dog Detector</h2>
+<p>Please click the "choose file" button below and select a JPEG picture to be analyzed</p>
+<br />
 <InputFile id="image-picker" OnChange="HandlePhotoSelected" accept="image/*" />
 <br />
 <label class="text-button" for="image-picker">
@@ -17,7 +22,7 @@
 <br />
 @if (isDetectingHotDog)
 {
-    <h2>Checing if it is a hotdog</h2>
+    <h3>Checking if it is a hotdog</h3>
     <Pulse />
 }
 @if (_hotDogResult != null)
@@ -25,13 +30,21 @@
 
     @if (_hotDogResult.isHotDog)
     {
-        <h2>It is a hotdog!</h2>
+        <h3>It is a hotdog!</h3>
     }
     else
     {
-        <h2>It is NOT a hotdog!</h2>
+        <h3>It is NOT a hotdog!</h3>
     }
 }
+
+<h2>How It Was Made</h2>
+<h3>Part 1: Creating the Web Assembly Project</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LCNelhslRII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Part 2: Creating the ML Model Using Visual Studio ML builder</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TvHTg0SurA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Part 1: Uploading and displaying an Image in Blazor</h3>
+
 
 
 
