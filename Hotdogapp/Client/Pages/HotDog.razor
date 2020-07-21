@@ -5,79 +5,127 @@
 @using BlazorInputFile
 @inject NavigationManager navigationManager
 @inject HttpClient _httpClient
+    <style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
 
-<h1>Hot Dog Detector App</h1>
-<h2>Inspiration</h2>
-<p>This app was inspired by HBO's Sillicon Valley See food application. See the video below :)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vIci3C4JkL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h2>Hot Dog Detector</h2>
-<p>Please click the "choose file" button below and select a JPEG picture to be analyzed</p>
-<br />
-<InputFile id="image-picker" OnChange="HandlePhotoSelected" accept="image/*" />
-<br />
-<label class="text-button" for="image-picker">
-    <img src="@_photoURL" />
-</label>
-<br />
-<br />
-@if (isDetectingHotDog)
-{
-    <h3>Checking if it is a hotdog</h3>
-    <Pulse />
-}
-@if (_hotDogResult != null)
-{
-
-    @if (_hotDogResult.isHotDog)
+            .iframe-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+    <h1>Hot Dog Detector App</h1>
+    <h2>Inspiration</h2>
+    <p>This app was inspired by HBO's Sillicon Valley See food application. See the video below :)</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vIci3C4JkL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br />
+    <br />
+    <h2>Hot Dog Detector</h2>
+    <p>Please click the "choose file" button below and select a JPEG picture to be analyzed</p>
+    <br />
+    <InputFile id="image-picker" OnChange="HandlePhotoSelected" accept="image/*" />
+    <br />
+    <label class="text-button" for="image-picker">
+        <img src="@_photoURL" />
+    </label>
+    <br />
+    <br />
+    @if (isDetectingHotDog)
     {
-        <h3>It is a hotdog!</h3>
+        <h3>Checking if it is a hotdog</h3>
+        <Pulse />
     }
-    else
+    @if (_hotDogResult != null)
     {
-        <h3>It is NOT a hotdog!</h3>
-    }
-}
-<br />
-<h2>How It Was Made</h2>
-<h3>Part 0: Creating the Web Assembly Project</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LCNelhslRII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h3>Part 1: Creating the ML Model Using Visual Studio ML builder</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TvHTg0SurA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h3>Part 2: Uploading and displaying an Image in Blazor</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uHEv7oG2pn8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h3>Part 3: Uploading and displaying an Image in Blazor</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IlAcYUp79bk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-
-@code
-{
-    private string _photoURL;
-    private bool isDetectingHotDog;
-    private HotDogResultModel _hotDogResult;
-
-
-    private async Task HandlePhotoSelected(IFileListEntry[] files)
-    {
-        var sourceFile = files.FirstOrDefault();
-        if (sourceFile != null)
+        @if (_hotDogResult.isHotDog)
         {
-            // Convert to reasonably-sized JPEG
-            var imageFile = await sourceFile.ToImageFileAsync("image/jpeg", 800, 600);
-
-            // Represent it as a data URL we can display
-            MemoryStream bytes = await imageFile.ReadAllAsync();
-            _photoURL = bytes.ToDataUrl("image/jpeg");
-            //send to server
-            isDetectingHotDog = true;
-            StateHasChanged();
-            var response = await _httpClient.PostAsync("api/DetectHotDog", new StringContent(_photoURL));
-            _hotDogResult = await response.Content.ReadFromJsonAsync<HotDogResultModel>();
-
-
-            isDetectingHotDog = false;
+            <h3>It is a hotdog!</h3>
+        }
+        else
+        {
+            <h3>It is NOT a hotdog!</h3>
         }
     }
+    <br />
+
+    <h2>How It Was Made</h2>
+    <br />
+    <div class="card-deck">
+        <div class="card" style="min-width: 400px;">
+            <div class='iframe-container'>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LCNelhslRII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Part 0</h4>
+                <p class="card-text">Creating the Web Assembly Project.</p>
+            </div>
+        </div>
+        <div class="card" style="min-width: 400px;">
+            <div class='iframe-container'>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TvHTg0SurA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Part 1</h4>
+                <p class="card-text">Creating the ML Model Using Visual Studio ML builder.</p>
+            </div>
+        </div>
+        <div class="card" style="min-width: 400px;">
+            <div class='iframe-container'>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uHEv7oG2pn8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Part 2</h4>
+                <p class="card-text">Uploading and displaying an Image in Blazor.</p>
+            </div>
+        </div>
+        <div class="card" style="min-width: 400px;">
+            <div class='iframe-container'>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IlAcYUp79bk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Part 3</h4>
+                <p class="card-text">Using ML NET to Classify Images Server Side.</p>
+            </div>
+        </div>
+    </div>
 
 
-}
+    @code
+{
+        private string _photoURL;
+        private bool isDetectingHotDog;
+        private HotDogResultModel _hotDogResult;
+
+
+        private async Task HandlePhotoSelected(IFileListEntry[] files)
+        {
+            var sourceFile = files.FirstOrDefault();
+            if (sourceFile != null)
+            {
+                // Convert to reasonably-sized JPEG
+                var imageFile = await sourceFile.ToImageFileAsync("image/jpeg", 800, 600);
+
+                // Represent it as a data URL we can display
+                MemoryStream bytes = await imageFile.ReadAllAsync();
+                _photoURL = bytes.ToDataUrl("image/jpeg");
+                //send to server
+                isDetectingHotDog = true;
+                StateHasChanged();
+                var response = await _httpClient.PostAsync("api/DetectHotDog", new StringContent(_photoURL));
+                _hotDogResult = await response.Content.ReadFromJsonAsync<HotDogResultModel>();
+
+
+                isDetectingHotDog = false;
+            }
+        }
+
+
+    }

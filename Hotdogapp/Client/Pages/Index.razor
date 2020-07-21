@@ -1,22 +1,105 @@
 ﻿@page "/"
-    <h1>Video Playlists</h1>
-    <h2>By Tech Category</h2>
-    <h3>Blazor</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kGLmCm3a_p3gwkGxeGIHEbe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h3>Kubernetes</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kFNOQ51L7eRABnEuL86ybmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h3>Azure Feautres</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kE_Q0GvfQmLt-qz94ydFrzj" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h3>Azure SQL</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kEjSQpjcTLcyyC1-cSqiCVl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h3>Web Applications</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kG2JuSWHjxKIb-5ax8WbAnS" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h3>.Net Core</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kF-4qVz8cDKzO6sI2ndkRqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h2>By Project</h2>
-    <h3>WireGuard</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kGcfAFDwiGlfmf2mSODSIoY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h3>Hot Dog Application</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kE8svt5NfzxjWzVuqgFW_pA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h3>CryptoTrader</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kHkIWskfWtPmupkNHqtsLVX" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h1>Video Playlists</h1>
+<h2>By Tech Category</h2>
+<style>
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+    }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+</style>
+<div class="card-deck">
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kGLmCm3a_p3gwkGxeGIHEbe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Blazor</h4>
+            <p class="card-text">This playlist has all the videos where we work with Blazor.</p>
+        </div>
+    </div>
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kFNOQ51L7eRABnEuL86ybmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Kubernetes</h4>
+            <p class="card-text">This playlist has all the videos where we work with Kubernetes.</p>
+        </div>
+    </div>
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kE_Q0GvfQmLt-qz94ydFrzj" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Azure Feautres</h4>
+            <p class="card-text">In this playlist we explore Azure and some of the it's features.</p>
+        </div>
+    </div>
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kEjSQpjcTLcyyC1-cSqiCVl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Azure SQL</h4>
+            <p class="card-text">In this playlist we set up Azure SQL and connect to it using MSIs.</p>
+        </div>
+    </div>
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kG2JuSWHjxKIb-5ax8WbAnS" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Web Applications</h4>
+            <p class="card-text">This playlist has all the videos where we build web applications.</p>
+        </div>
+    </div>
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kF-4qVz8cDKzO6sI2ndkRqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">.NET Core</h4>
+            <p class="card-text">This playlist contains all our .NET Core projects.</p>
+        </div>
+    </div>
+</div>
+<h2>By Project</h2>
+<div class="card-deck">
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kGcfAFDwiGlfmf2mSODSIoY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">WireGuard</h4>
+            <p class="card-text">In this playlist we create a WireGuard VPN and add connect to it from different clients.</p>
+        </div>
+    </div>
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kE8svt5NfzxjWzVuqgFW_pA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Hot Dog Application</h4>
+            <p class="card-text">In this playlist we us ML.NET to create a web application that can tell you if a picture is a hot dog</p>
+        </div>
+    </div>
+    <div class="card" style="min-width: 400px;">
+        <div class='iframe-container'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLUQ4D25da8kHkIWskfWtPmupkNHqtsLVX" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">CryptoTrader</h4>
+            <p class="card-text">In this playlist we create a cryptocurrency trader for the Bittrex exchange.</p>
+        </div>
+    </div>
+</div>
