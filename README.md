@@ -1,3 +1,4 @@
+![Build and deploy ASP.Net Core app to Azure Web App - hotdogappserver](https://github.com/coding-flamingo/HotdogApp/workflows/Build%20and%20deploy%20ASP.Net%20Core%20app%20to%20Azure%20Web%20App%20-%20hotdogappserver/badge.svg)
 # Quick Overview
 all the repos under coding flamingo are the code used in my Youtube channel: https://www.youtube.com/channel/UCjGgqULI1EX0VEoizrD6PYA
 # HotdogApp
