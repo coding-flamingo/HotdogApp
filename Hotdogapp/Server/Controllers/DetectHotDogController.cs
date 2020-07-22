@@ -28,30 +28,32 @@ namespace Hotdogapp.Server.Controllers
         {
             string imageBase64;
             InMemoryImageData imageInputforModel = new InMemoryImageData();
-            try
-            {
-                using (StreamReader reader = new StreamReader(Request.Body))
-                {
-                    imageBase64 = await reader.ReadToEndAsync();
-                }
-                imageInputforModel.Image = DataURLServices.ToBytes(imageBase64);
-                if (!imageInputforModel.Image.IsValidImage())
-                {
-                    throw new ArgumentException("File was not an image file type");
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Failed to read image", ex);
-                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
-            }
-            ImagePrediction prediction = _predictionEnginePool.Predict(imageInputforModel);
-            HotDogResultModel hotDogResult = new HotDogResultModel
-            {
-                accuracy = prediction.Score.Max().ToString(),
-                isHotDog = prediction.PredictedLabel.Equals("hot_dog")
-            };
+            //try
+            //{
+            //    using (StreamReader reader = new StreamReader(Request.Body))
+            //    {
+            //        imageBase64 = await reader.ReadToEndAsync();
+            //    }
+            //    imageInputforModel.Image = DataURLServices.ToBytes(imageBase64);
+            //    if (!imageInputforModel.Image.IsValidImage())
+            //    {
+            //        throw new ArgumentException("File was not an image file type");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError("Failed to read image", ex);
+            //    throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+            //}
+            //ImagePrediction prediction = _predictionEnginePool.Predict(imageInputforModel);
+            HotDogResultModel hotDogResult = new HotDogResultModel();
+            //{
+            //    accuracy = prediction.Score.Max().ToString(),
+            //    isHotDog = prediction.PredictedLabel.Equals("hot_dog")
+            //};
             return hotDogResult;
         }
+
+        
     }
 }

@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>54dee99c-9f8a-4fe3-a9d4-a597cbf6c990</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +14,7 @@
     <PackageReference Include="Microsoft.ML" Version="1.5.0" />
     <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.5.0" />
     <PackageReference Include="Microsoft.ML.Vision" Version="1.5.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.2.0.1" />
   </ItemGroup>
 
